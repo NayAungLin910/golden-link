@@ -1,0 +1,17 @@
+.button_gold {
+    background-color: gold;
+    color: darkblue;
+    font-weight: bold;
+    border: none;
+    border-color: transparent;
+    border-radius: 9999px;
+    outline: none;
+    padding: 5px 10px;
+}
+
+.button_gold:hover {
+    background-color: transparent;
+    border: 1px solid;
+    border-color: gold;
+    color: gold;
+}

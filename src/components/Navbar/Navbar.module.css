@@ -2,14 +2,44 @@
   --nav-height: 65px;
 }
 
+.main_nav {
+  display: flex;
+  height: var(--nav-height);
+  width: 100%;
+  gap: 10px;
+  background-color: rgba(0, 54, 126);
+}
+
 .nav {
   display: flex;
   align-items: center;
   justify-content: right;
   height: var(--nav-height);
   gap: 3rem;
+  width: 100%;
+  color: white;
   padding-right: 10px;
   background-color: rgba(0, 54, 126);
+}
+
+.nav_img {
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.nav_link {
+  color: white;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.brand a {
+  color: white;
+  padding-left: 10px;
 }
 
 .nav_brand {
@@ -49,7 +79,7 @@
     transform: translateX(100%);
     transition: 0.5s ease-in;
   }
-  
+
   .nav_item {
     margin-top: 20px;
   }
