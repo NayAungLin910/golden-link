@@ -1,14 +1,29 @@
+:root {
+  --primary-gold-color: gold;
+  --primary-gold-color-rgb: rgb(255, 216, 58);
+  --primary-gold-color-rgb-transparent: rgba(255, 216, 58, 0.3);
+  --primary-blue-color: rgb(0, 55, 126);
+  --primary-blue-color-transparent: rgba(0, 55, 126, 0.7);
+}
+
 *::before {
-  margin: 0;
+  overflow-x: hidden;
   box-sizing: border-box;
 }
 
 html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-size: 62.5%;
 }
 
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-size: 1.6rem;
+  overflow-x: hidden;
 }
 
 li {

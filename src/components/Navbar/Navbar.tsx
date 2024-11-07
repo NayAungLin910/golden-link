@@ -1,8 +1,9 @@
 import { FC, useState } from "react";
 import styles from "./Navbar.module.css";
-import common from "../../styles/common.module.css"
+import common from "../../styles/common.module.css";
 import { FaBars } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
+import { Link } from "react-router-dom";
 
 export interface NavbarPropsInterface {}
 
@@ -20,9 +21,13 @@ const Navbar: FC<NavbarPropsInterface> = () => {
   return (
     <nav className={styles.main_nav}>
       <div className={styles.brand}>
-        <a href="#">
-          <img src="./golden_link_icon.jpg" className={styles.nav_img} alt="" />
-        </a>
+        <Link to="/">
+          <img
+            src="./golden_link_icon.webp"
+            className={styles.nav_img}
+            alt=""
+          />
+        </Link>
       </div>
       <div className={styles.nav}>
         <ul className={nav}>
@@ -32,13 +37,18 @@ const Navbar: FC<NavbarPropsInterface> = () => {
             </a>
           </li>
           <li className={styles.nav_item}>
-            <a href="#" className={styles.nav_link}>
-              Sevices
+            <a href="#" className={`${styles.nav_link} ${common.button_gold}`}>
+              Our Sevices
             </a>
           </li>
           <li className={styles.nav_item}>
-            <a href="#" className={styles.nav_link}>
+            <a href="#" className={`${styles.nav_link} ${common.button_gold}`}>
               About
+            </a>
+          </li>
+          <li className={styles.nav_item}>
+            <a href="#" className={`${styles.nav_link} ${common.button_gold}`}>
+              Contact
             </a>
           </li>
         </ul>

@@ -7,7 +7,7 @@
   height: var(--nav-height);
   width: 100%;
   gap: 10px;
-  background-color: rgba(0, 54, 126);
+  background-color: var(--primary-blue-color);
 }
 
 .nav {
@@ -19,13 +19,12 @@
   width: 100%;
   color: white;
   padding-right: 10px;
-  background-color: rgba(0, 54, 126);
+  background-color: transparent;
 }
 
 .nav_img {
   width: 50px;
   border-radius: 50%;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .nav_link {
@@ -66,6 +65,7 @@
 
   .nav_menu {
     position: fixed;
+    z-index: 10;
     top: var(--nav-height);
     right: 0;
     width: 50%;
@@ -74,7 +74,7 @@
     flex-direction: column;
     justify-content: flex-start;
     padding: 20px 0px;
-    background-color: rgb(0, 28, 73);
+    background-color: rgba(0, 28, 73);
     margin: 0;
     transform: translateX(100%);
     transition: 0.5s ease-in;
