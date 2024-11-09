@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect, useState } from "react";
 import imageSliderStyles from "./ImageSlider.module.css";
 
 export interface SlideInterface {
@@ -14,20 +14,35 @@ export interface ImageSliderProps {
 const ImageSlider: FC<ImageSliderProps> = ({ slides }) => {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((preIndex) => {
+        if(preIndex === slides.length - 1) {
+          return 0
+        }else{
+          return preIndex + 1
+        }
+      })
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [slides.length]);
+
   return (
     <>
       <div className={imageSliderStyles.img_slider_wrapper}>
         <div className={imageSliderStyles.img_slider}>
           {slides?.map((slide, index) => (
-            <div className={imageSliderStyles.slide} key={index}>
-              <img
-                className={`${
-                  currentIndex === index ? imageSliderStyles.active : ""
-                }`}
-                src={slide.imgUrl}
-                alt=""
-              />
-              <div className={imageSliderStyles?.info}>
+            <div
+              className={`${imageSliderStyles.slide} ${
+                currentIndex === index ? imageSliderStyles.active : ""
+              }`}
+              key={index}
+            >
+              <img src={slide.imgUrl} alt="" />
+              <div
+                key={`image-slider-info-${index}`}
+                className={imageSliderStyles?.info}
+              >
                 <h2>{slide.title}</h2>
                 <p>{slide.description}</p>
               </div>
@@ -35,8 +50,14 @@ const ImageSlider: FC<ImageSliderProps> = ({ slides }) => {
                 {slides?.map((slide, index) => (
                   <div
                     className={`${imageSliderStyles.btn} ${
-                      currentIndex === index ? imageSliderStyles.active : ""
+                      currentIndex === index
+                        ? imageSliderStyles.active_nav_btn
+                        : ""
                     }`}
+                    key={`navigation-button-${index}`}
+                    onClick={() => {
+                      setCurrentIndex(index);
+                    }}
                   ></div>
                 ))}
               </div>
