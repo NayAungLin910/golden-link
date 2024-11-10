@@ -23,4 +23,15 @@
     border-radius: 9999px;
     outline: none;
     padding: 5px 10px;
-  }
+}
+
+.active_btn {
+  background-color: transparent;
+  color: gold;
+  font-weight: bold;
+  border: 1px solid;
+  border-color: gold;
+  border-radius: 9999px;
+  outline: none;
+  padding: 5px 10px;
+}

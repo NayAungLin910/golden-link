@@ -17,15 +17,15 @@ const ImageSlider: FC<ImageSliderProps> = ({ slides }) => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((preIndex) => {
-        if(preIndex === slides.length - 1) {
-          return 0
-        }else{
-          return preIndex + 1
+        if (preIndex === slides.length - 1) {
+          return 0;
+        } else {
+          return preIndex + 1;
         }
-      })
+      });
     }, 5000);
     return () => clearInterval(interval);
-  }, [slides.length]);
+  }, [slides.length, currentIndex]);
 
   return (
     <>

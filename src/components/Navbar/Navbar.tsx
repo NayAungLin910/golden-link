@@ -3,12 +3,14 @@ import styles from "./Navbar.module.css";
 import common from "../../styles/common.module.css";
 import { FaBars } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export interface NavbarPropsInterface {}
 
 const Navbar: FC<NavbarPropsInterface> = () => {
   const [active, setActive] = useState<boolean>(false);
+  const location = useLocation();
+  const currentUrl = location.pathname;
 
   const navToggle = () => {
     setActive(!active);
@@ -32,24 +34,44 @@ const Navbar: FC<NavbarPropsInterface> = () => {
       <div className={styles.nav}>
         <ul className={nav}>
           <li className={styles.nav_item}>
-            <a href="#" className={`${styles.nav_link} ${common.button_gold}`}>
+            <Link
+              to="/"
+              className={`${styles.nav_link} ${common.button_gold} ${
+                currentUrl === "/" ? common.active_btn : ""
+              }`}
+            >
               Home
-            </a>
+            </Link>
           </li>
           <li className={styles.nav_item}>
-            <a href="#" className={`${styles.nav_link} ${common.button_gold}`}>
+            <Link
+              to="/our-services"
+              className={`${styles.nav_link} ${common.button_gold} ${
+                currentUrl === "/our-services" ? common.active_btn : ""
+              }`}
+            >
               Our Sevices
-            </a>
+            </Link>
           </li>
           <li className={styles.nav_item}>
-            <a href="#" className={`${styles.nav_link} ${common.button_gold}`}>
+            <Link
+              to="/about"
+              className={`${styles.nav_link} ${common.button_gold} ${
+                currentUrl === "/about" ? common.active_btn : ""
+              }`}
+            >
               About
-            </a>
+            </Link>
           </li>
           <li className={styles.nav_item}>
-            <a href="#" className={`${styles.nav_link} ${common.button_gold}`}>
+            <Link
+              to="/contact"
+              className={`${styles.nav_link} ${common.button_gold} ${
+                currentUrl === "/contact" ? common.active_btn : ""
+              }`}
+            >
               Contact
-            </a>
+            </Link>
           </li>
         </ul>
         <div className={styles.nav_toggler}>
