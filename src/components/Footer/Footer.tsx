@@ -15,33 +15,33 @@ const Footer: FC<FooterPropsInterface> = () => {
           <div className={`${styles.wave} ${styles.wave3}`}></div>
           <div className={`${styles.wave} ${styles.wave4}`}></div>
         </div>
-        <ul className={styles.social_icon}>
-          <li>
+        <div className={styles.social_icon}>
+          <div className={styles.li}>
             <Link to="">
               <FaFacebook />
             </Link>
-          </li>
-          <li>
+          </div>
+          <div className={styles.li}>
             <Link to="">
               <FaPhoneSquare />
             </Link>
-          </li>
-        </ul>
-        <ul className={styles.menu}>
-          <li>
+          </div>
+        </div>
+        <div className={styles.menu}>
+          <div className={styles.li}>
             <Link to="">Home</Link>
-          </li>
-          <li>
+          </div>
+          <div className={styles.li}>
             <Link to="">About</Link>
-          </li>
-        </ul>
-        <ul className={styles.menu}>
-          <li>
+          </div>
+        </div>
+        <div className={styles.menu}>
+          <div className={styles.li}>
             <p className={styles.copyright}>
               © 2024 Golden Link | All Rights Reserved
             </p>
-          </li>
-        </ul>
+          </div>
+        </div>
       </footer>
     </div>
   );

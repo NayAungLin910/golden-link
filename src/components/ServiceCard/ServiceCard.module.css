@@ -156,7 +156,7 @@
 }
 
 /* Smaller Divices **/
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 450px) {
   .container {
     margin-inline: 1rem;
   }

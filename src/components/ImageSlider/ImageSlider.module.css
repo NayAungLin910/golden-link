@@ -10,6 +10,7 @@
 .img_slider_wrapper {
   display: flex;
   justify-content: center;
+  overflow-x: hidden;
 }
 
 .img_slider .slide {
@@ -28,6 +29,7 @@
   position: absolute;
   max-width: 40%;
   height: auto;
+  z-index: 2;
   padding: 10px;
   background-color: var(--primary-gold-color-rgb-transparent);
 }
@@ -74,16 +76,22 @@
 }
 
 @media (max-width: 820px) {
-  .img_slider .slide {
+  .img_slider .slide img {
     position: relative;
     z-index: 1;
-    width: 100vw;
+    width: 150vw
+  }
+
+  .slide {
+    overflow: hidden;
   }
 
   .img_slider .slide .info {
     top: 0;
+    left: 100px;
+
     position: absolute;
-    max-width: 70%;
+    max-width: 40%;
     height: auto;
     padding: 5px;
     background-color: var(--primary-gold-color-rgb-transparent);
@@ -91,7 +99,7 @@
 
   .img_slider .slide .info h2 {
     color: var(--primary-blue-color);
-    font-size: 15px;
+    font-size: 20px;
     text-transform: uppercase;
     font-weight: 800;
     letter-spacing: 2px;
@@ -99,7 +107,7 @@
 
   .img_slider .slide .info p {
     color: var(--primary-blue-color);
-    font-size: 10px;
+    font-size: 15px;
     font-weight: 600;
   }
 
