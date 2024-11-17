@@ -9,6 +9,12 @@ const Footer: FC<FooterPropsInterface> = () => {
   return (
     <div className={styles.footer_wrapper}>
       <footer className={styles.footer}>
+        <div className={styles.waves}>
+          <div className={`${styles.wave} ${styles.wave1}`}></div>
+          <div className={`${styles.wave} ${styles.wave2}`}></div>
+          <div className={`${styles.wave} ${styles.wave3}`}></div>
+          <div className={`${styles.wave} ${styles.wave4}`}></div>
+        </div>
         <ul className={styles.social_icon}>
           <li>
             <Link to="">
