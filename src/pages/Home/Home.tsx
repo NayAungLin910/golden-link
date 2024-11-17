@@ -6,6 +6,7 @@ import ImageSlider, {
 import ServiceCard, {
   ServiceCardInterface,
 } from "../../components/ServiceCard/ServiceCard";
+import Footer from "../../components/Footer/Footer";
 
 export interface HomeProps {}
 
@@ -64,6 +65,7 @@ const Home: FC<HomeProps> = ({}) => {
       <Navbar />
       <ImageSlider slides={slides} />
       <ServiceCard serviceCards={serviceCards} />
+      <Footer />
     </>
   );
 };
